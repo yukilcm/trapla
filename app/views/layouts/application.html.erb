@@ -12,6 +12,27 @@
   
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="logo my-3">
+        <a href="index.html">ロゴ画像</a>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="list-group">
+            <% if user_signed_in? %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'list-group-item list-group-item-action list-group-item-light' %>
+            <% else %>
+                <%= link_to "ログイン", new_user_session_path, class: 'list-group-item list-group-item-action list-group-item-light' %>
+            <% end %>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-light">スケジュール</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-light">チェックリスト</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-light">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="col-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
