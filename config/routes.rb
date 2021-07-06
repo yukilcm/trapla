@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'travels/index'
+
+  get 'travels/new'
+
   root 'travels#index'
 
   resources :travels

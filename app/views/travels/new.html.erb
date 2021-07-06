@@ -1,21 +1,2 @@
-<div class="container">
-  <div class="travels_new">
-    <p>プラン新規作成</p>
-    <%= form_for @travel do |f| %>
-      <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">タイトル</label>
-      <%= f.text_field :name, class: 'form-control' %>
-      </div>
-      <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">出発日</label>
-      <%= f.date_field :start_date, class: 'form-control' %>
-      </div>
-      <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">帰宅日</label>
-      <%= f.date_field :end_date, class: 'form-control' %>
-      </div>
-      <%= f.submit '作成', class: 'btn btn-primary' %>
-    <% end %>
-  </div>
-</div>
-</div> 
+<h1>Travels#new</h1>
+<p>Find me in app/views/travels/new.html.erb</p>
