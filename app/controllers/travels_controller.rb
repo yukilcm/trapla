@@ -1,4 +1,5 @@
 class TravelsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @travels = current_user.travels
   end
