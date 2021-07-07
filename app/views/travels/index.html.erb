@@ -6,6 +6,7 @@
       <th scope="col">タイトル</th>
       <th scope="col">出発日</th>
       <th scope="col">帰宅日</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,7 @@
         <td><%= travel.name %></td>
         <td><%= travel.start_date %></td>
         <td><%= travel.end_date %></td>
+        <td><%= link_to "Edit", edit_travel_path(travel) %></td>
       </tr>
     <% end %>
   </tbody>

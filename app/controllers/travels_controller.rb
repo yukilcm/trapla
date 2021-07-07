@@ -13,6 +13,20 @@ class TravelsController < ApplicationController
     @travel.save!
     redirect_to root_path
   end
+  
+  def edit 
+    @travel = current_user.travels.find(params[:id])
+  end
+  
+  def update
+    @travel = current_user.travels.find(params[:id])
+
+    if @travel.update(travel_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
 
   private
 
