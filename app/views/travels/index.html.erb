@@ -15,7 +15,12 @@
         <td><%= travel.name %></td>
         <td><%= travel.start_date %></td>
         <td><%= travel.end_date %></td>
-        <td><%= link_to "Edit", edit_travel_path(travel) %></td>
+        <td>
+          <%= link_to "Edit", edit_travel_path(travel) %>
+          <%= link_to "Schedule Edit", travel_schedules_path(travel) %>
+          <%= link_to "delete",  edit_travel_path(travel)%>
+
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -27,6 +27,13 @@ class TravelsController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy 
+    @travel = current_user.travels.find(params[:id])
+    @travel.destroy
+    @travel.save!
+    redirect_to root_path
+  end
 
   private
 
@@ -34,3 +41,5 @@ class TravelsController < ApplicationController
     params.require(:travel).permit(:name, :start_date, :end_date)
   end
 end
+
+ 
