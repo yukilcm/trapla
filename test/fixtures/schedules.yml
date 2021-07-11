@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  travel_id: 1
+  start_at: 2021-07-11 12:54:24
+  end_at: 2021-07-11 12:54:24
+  title: MyString
+  memo: MyString
+
+two:
+  travel_id: 1
+  start_at: 2021-07-11 12:54:24
+  end_at: 2021-07-11 12:54:24
+  title: MyString
+  memo: MyString
