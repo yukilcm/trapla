@@ -1,4 +1,4 @@
- <%= form_for @schedules do |f| %>
+ <%= form_for [@travels,@schedules] do |f| %>
 <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">プランタイトル</label>
     <%= f.text_field :name, class: 'form-control' %>  

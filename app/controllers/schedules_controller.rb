@@ -1,14 +1,14 @@
 class SchedulesController < ApplicationController
   def index
-    @schedules = current_user.travels.find(params[:travel_id])
+    @travels,@schedule = current_user.schedules
   end
   
   def new
-    @schedules = current_user.travels.new
+    @travel,@schedule = current_user.schedules.new
   end
   
   def create
-    @schedules = current_user.travels.new(travel_params)
+    @schedules = current_user.schedules.new(schedule_params)
     @schedules.save!
     redirect_to travels/:id/schedules_path
   end  
