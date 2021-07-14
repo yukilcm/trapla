@@ -1,17 +1,39 @@
 class SchedulesController < ApplicationController
   def index
-    @travels,@schedule = current_user.schedules
+    @schedules = current_user.travels.find(params[:travel_id])
   end
   
   def new
-    @travel,@schedule = current_user.schedules.new
+    @schedule = current_user.travels.find(params[:travel_id]).new
   end
   
   def create
-    @schedules = current_user.schedules.new(schedule_params)
-    @schedules.save!
-    redirect_to travels/:id/schedules_path
+    @schedule = current_user.travels.find(params[:travel_id]).schedules.new(schedule_params)
+    @schedule.save!
+    redirect_to travel_schedules_path
   end  
+  
+  def edit 
+    @schedule = current_user.travels.find(params[:travel_id]).schedules
+  end
+  
+  def update
+    @schedule = current_user.travels.find(params[:travel_id]).schedules
+
+    if @schedule.update(travel_params)
+      redirect_to travel_schedules_path
+    else
+      render :edit
+    end
+  end
+  
+  def destroy 
+    @schedule = current_user.travels.find(params[:travel_id]).schedules
+    @schedule.destroy
+    @schedule.save!
+    redirect_to travel_schedules_path
+  end
+
   
   private
 

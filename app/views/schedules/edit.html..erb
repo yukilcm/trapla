@@ -24,19 +24,19 @@
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">開始時刻</label>
         <div class="col-sm-10">
-        <%# <%= f.datetime_select :start_at, class: 'form-control' %> 
+         <%= f.datetime_select :start_at, class: 'form-control' %>
         </div>
     </div>
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">終了時刻</label>
         <div class="col-sm-10">
-        <%# <%= f.datetime_select :end_at, class: 'form-control' %>
+        <%= f.datetime_select :end_at, class: 'form-control' %>
         </div>
     </div>
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">スケジュール名</label>
         <div class="col-sm-10">
-        <%# <%= f.:title, class: 'form-control' %>
+        <%= f.text_field :title, class: 'form-control' %>
         </div>
     </div>
     <div class="mb-3 row">
@@ -54,7 +54,7 @@
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">メモ</label>
         <div class="col-sm-10">
-        <%# <%= f.date_field :memo, class: 'form-control' %>
+        <%= f.date_field :memo, class: 'form-control' %>
         </div>
     </div>
     <div class="mb-3 row">
@@ -63,7 +63,9 @@
         <input type="text" class="form-control" id="inputtext">
         </div>
     </div>
-         <%= link_to '作成',edit_travel_schedules_path, class: 'btn btn-primary' %>
+         <%= f.submit '更新', class: 'btn btn-primary' %>
+         <%= link_to "削除", travel_schedules_path,  method: :delete, data: {confirm: '削除しますか？' }, class: 'btn btn-primary' %>
+
      <% end %>
 </div>
 </div> 
