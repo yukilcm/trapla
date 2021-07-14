@@ -1,5 +1,40 @@
 <%= link_to "スケジュール新規作成", new_travel_schedule_path, class: 'btn btn-success' %>
 <div class="mb-3 row">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">プランタイトル</th>
+      <th scope="col">日付</th>
+      <th scope="col">時差設定</th>
+      <th scope="col">開始時刻</th>
+      <th scope="col">終了時刻</th>
+      <th scope="col">スケジュール名</th>
+      <th scope="col">説明</th>
+      <th scope="col">参考リンク</th>
+      <th scope="col">メモ</th>
+      <th scope="col">費用</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.travel.name %></td>
+        <td><%= schedule.start_at.strftime("%Y/%-m") %></td>
+        <td></td>
+        <td><%= schedule.start_at.strftime("%-H:%M") %></td>
+        <td><%= schedule.end_at.strftime("%-H:%M") %></td>
+        <td><%= schedule.title %></td>
+        <td></td>
+        <td></td>
+        <td><%= schedule.memo %></td>
+        <td><%= schedule.cost %></td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
     <label for="text" class="col-sm-2 col-form-label">プランタイトル</label>
        
     </div>

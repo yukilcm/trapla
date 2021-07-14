@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210711161757) do
+ActiveRecord::Schema.define(version: 20210714121610) do
 
   create_table "schedules", force: :cascade do |t|
     t.integer  "travel_id"
@@ -20,12 +20,13 @@ ActiveRecord::Schema.define(version: 20210711161757) do
     t.string   "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "cost"
   end
 
   create_table "travels", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.date     "start_date", null: false
+    t.date     "start_date"
     t.date     "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

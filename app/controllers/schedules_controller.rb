@@ -1,10 +1,12 @@
 class SchedulesController < ApplicationController
   def index
-    @schedules = current_user.travels.find(params[:travel_id])
+    travel = current_user.travels.find(params[:travel_id])
+    @schedules = travel.schedules
   end
   
   def new
-    @schedule = current_user.travels.find(params[:travel_id]).new
+    @travel = current_user.travels.find(params[:travel_id])
+    @schedule = @travel.schedules.new
   end
   
   def create
@@ -38,6 +40,6 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedules).permit(:start_at, :end_at)
+    params.require(:schedule).permit(:start_at, :end_at, :title, :memo, :cost)
   end
 end
