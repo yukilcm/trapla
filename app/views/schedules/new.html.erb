@@ -1,14 +1,14 @@
  <div class="container">
   <div class="schedules_new">
- <%= form_for @schedule, url: travel_schedules_path(@travel) do |f| %>
-<div class="mb-3 row">
+    <%= form_for @schedule,url: travel_schedules_path(@travel) do |f| %>
+    <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">プランタイトル</label>
         <div class="col-sm-10">
             <%= @travel.name %>
         </div>
     </div>
     
-    <%# <div class="mb-3 row">
+    <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">日付</label>
         <div class="col-sm-10">
         <input type="text" class="form-control" id="inputtext">
@@ -19,24 +19,24 @@
         <div class="col-sm-10">
         <input type="text" class="form-control" id="inputtext">
         </div>
-    </div> %>
+    </div> 
      
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">開始時刻</label>
         <div class="col-sm-10">
-            <%= f.datetime_select :start_at, class: 'form-control' %> 
+         <%= f.datetime_select :start_at, class: 'form-control' %> 
         </div>
     </div>
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">終了時刻</label>
         <div class="col-sm-10">
-            <%= f.datetime_select :end_at, class: 'form-control' %>
+         <%= f.datetime_select :end_at, class: 'form-control' %>
         </div>
     </div>
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">スケジュール名</label>
         <div class="col-sm-10">
-            <%= f.text_field :title, class: 'form-control' %>
+            <%= f.text_field:title, class: 'form-control' %>
         </div>
     </div>
     <div class="mb-3 row">
@@ -54,16 +54,16 @@
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">メモ</label>
         <div class="col-sm-10">
-             <%= f.text_area :memo, class: 'form-control' %>
+         <%= f.text_area:memo, class: 'form-control' %>
         </div>
     </div>
     <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">費用</label>
         <div class="col-sm-10">
-             <%= f.number_field :cost, class: 'form-control' %>
+            <%= f.number_field :cost, class: 'form-control' %>
         </div>
     </div>
-        <%= f.submit '作成', class: 'btn btn-primary' %>
+         <%= f.submit '作成', class: 'btn btn-primary' %>
      <% end %>
 </div>
 </div> 

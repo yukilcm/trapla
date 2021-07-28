@@ -1,6 +1,6 @@
 <%= link_to "スケジュール新規作成", new_travel_schedule_path, class: 'btn btn-success' %>
 <div class="mb-3 row">
-<table class="table">
+    <table class="table">
   <thead>
     <tr>
       <th scope="col">プランタイトル</th>
@@ -29,53 +29,12 @@
         <td></td>
         <td><%= schedule.memo %></td>
         <td><%= schedule.cost %></td>
-        <td>
-        </td>
+        <td><%= link_to "edit", edit_travel_schedule_path(@travel,schedule) %></td>
+        <td><%= link_to "delete", travel_schedule_path(@travel,schedule),  method: :delete, data: {confirm: '削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-    <label for="text" class="col-sm-2 col-form-label">プランタイトル</label>
-       
-    </div>
-     <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">日付</label>
-    </div>
-    <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">時差設定</label>
-    </div> 
-    
-    <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">開始時刻</label>
-        <div class="col-sm-10">
-        </div>
-    </div>
-    <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">終了時刻</label>
-        <div class="col-sm-10">
-        </div>
-    </div>
-    <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">スケジュール名</label>
-        <div class="col-sm-10">
-        </div>
-    </div>
-    <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">説明</label>
-    </div>
-    <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">参考リンク</label>
-    </div>
-    <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">メモ</label>
-        <div class="col-sm-10">
-        </div>
-    </div>
-    <div class="mb-3 row">
-    <label for="text" class="col-sm-2 col-form-label">費用</label>
-        <%#< div class="col-sm-10">
-        <input type="text" class="form-control" id="inputtext">
-        </div> %>
-    </div>
+</div>
          
     
