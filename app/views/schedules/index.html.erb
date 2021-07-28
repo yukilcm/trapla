@@ -20,7 +20,7 @@
     <% @schedules.each do |schedule| %>
       <tr>
         <td><%= schedule.travel.name %></td>
-        <td><%= schedule.start_at.strftime("%Y/%-m") %></td>
+        <td><%= schedule.start_at.strftime("%Y/%-m/%-d") %></td>
         <td></td>
         <td><%= schedule.start_at.strftime("%-H:%M") %></td>
         <td><%= schedule.end_at.strftime("%-H:%M") %></td>

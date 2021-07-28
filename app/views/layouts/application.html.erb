@@ -30,6 +30,13 @@
           </div>
         </div>
         <div class="col-9">
+          <% if flash.present? %>
+            <% flash.each do |alert_type, message| %>
+              <div class="alert alert-<%= alert_type %>">
+                <%= message.html_safe %>
+              </div>
+            <% end %>
+          <% end %>
           <%= yield %>
         </div>
       </div>

@@ -7,14 +7,20 @@ class SchedulesController < ApplicationController
   
   def new
     @travel = current_user.travels.find(params[:travel_id])
-    @schedule = @travel.schedules.build
+    @schedule = @travel.schedules.new
   end
   
   def create
     @travel = current_user.travels.find(params[:travel_id])
-    @schedule = @travel.schedules.build(schedule_params)
-    @schedule.save!
-    redirect_to travel_schedules_path
+    @schedule = @travel.schedules.new(schedule_params)
+    if @schedule.within_travel_period?
+      @schedule.save!
+      flash[:success] = "スケジュールを作成しました"
+      redirect_to travel_schedules_path
+    else
+      flash.now[:danger] = "プランの期間外です"
+      render :new
+    end
   end  
   
   def edit 
@@ -25,9 +31,13 @@ class SchedulesController < ApplicationController
   def update
     @travel = current_user.travels.find(params[:travel_id])
     @schedule = @travel.schedules.find(params[:id])
-    if @schedule.update(schedule_params)
+    @schedule.assign_attributes(schedule_params)
+    if @schedule.within_travel_period?
+      @schedule.save!
+      flash[:success] = "スケジュールを更新しました"
       redirect_to travel_schedules_path
     else
+      flash.now[:danger] = "プランの期間外です"
       render :edit
     end
   end
