@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210714121610) do
+ActiveRecord::Schema.define(version: 20210804121427) do
+
+  create_table "checklists", force: :cascade do |t|
+    t.string   "title",                      null: false
+    t.integer  "travel_id",                  null: false
+    t.boolean  "checked",    default: false, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "schedules", force: :cascade do |t|
     t.integer  "travel_id"

@@ -2,7 +2,15 @@ class SchedulesController < ApplicationController
   before_action :authenticate_user!
   def index
     @travel = current_user.travels.find(params[:travel_id])
-    @schedules = @travel.schedules
+    @schedules = @travel.schedules.order(:start_at)
+    
+    @schedule_hash = {}
+    (@travel.start_date..@travel.end_date).each do |date|
+      @schedule_hash[date] = []
+    end
+    @schedules.each do |schedule|
+      @schedule_hash[schedule.start_at.to_date] << schedule
+    end
   end
   
   def new
