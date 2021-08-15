@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :travels do
     resources :schedules
+    resources :checklists
   end
 
   devise_for :users

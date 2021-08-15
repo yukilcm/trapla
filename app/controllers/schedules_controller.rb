@@ -24,7 +24,7 @@ class SchedulesController < ApplicationController
     if @schedule.within_travel_period?
       @schedule.save!
       flash[:success] = "スケジュールを作成しました"
-      redirect_to travel_schedules_path
+      redirect_to travel_schedules_path(@travel)
     else
       flash.now[:danger] = "プランの期間外です"
       render :new
@@ -43,7 +43,7 @@ class SchedulesController < ApplicationController
     if @schedule.within_travel_period?
       @schedule.save!
       flash[:success] = "スケジュールを更新しました"
-      redirect_to travel_schedules_path
+      redirect_to travel_schedules_path(@travel)
     else
       flash.now[:danger] = "プランの期間外です"
       render :edit
@@ -53,7 +53,7 @@ class SchedulesController < ApplicationController
   def destroy 
     @travel = current_user.travels.find(params[:travel_id])
     @travel.schedules.find(params[:id]).destroy
-    redirect_to travel_schedules_path
+    redirect_to travel_schedules_path(@travel)
   end
 
   

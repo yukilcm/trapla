@@ -19,7 +19,8 @@
           <%= link_to "Edit", edit_travel_path(travel) %>
           <%= link_to "Schedule Edit", travel_schedules_path(travel) %>
           <%= link_to "delete", travel_path(travel),  method: :delete, data: {confirm: '削除しますか？' } %>
-
+          <%= link_to "Checklist Edit", travel_checklists_path(travel) %>
+ 
         </td>
       </tr>
     <% end %>

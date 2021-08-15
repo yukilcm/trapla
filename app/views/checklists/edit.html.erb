@@ -1,0 +1,21 @@
+  <div class="container">
+  <div class="checklist_new">
+    <%= form_for @checklist,url: travel_checklist_path(@travel,@checklist) do |f| %>
+    <div class="mb-3 row">
+    <label for="text" class="col-sm-2 col-form-label">プランタイトル</label>
+        <div class="col-sm-10">
+            <%= @travel.name %>
+        </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="text" class="col-sm-2 col-form-label">項目名</label>
+        <div class="col-sm-10">
+            <%= f.text_field :title, class: 'form-control' %>
+        </div>
+    </div>
+         <%= f.submit '更新', class: 'btn btn-primary' %>
+     <% end %>
+</div>
+</div> 
+       
+       
