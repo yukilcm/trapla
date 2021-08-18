@@ -8,9 +8,6 @@ class CreateSchedules < ActiveRecord::Migration[5.0]
       t.string :memo
 
       t.timestamps
-      
-
-      t.index ["user_id"], name: "index_travels_on_user_id"
     end
   end
 end
