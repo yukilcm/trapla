@@ -20,8 +20,8 @@
         </td>
         <td><%= checklist.title %></td>
         <td>
-          <%= link_to "Edit", edit_travel_checklist_path(@travel,checklist) %>
-          <%= link_to "delete", travel_checklist_path(@travel,checklist),  method: :delete, data: {confirm: '削除しますか？' } %>
+          <%= link_to "編集", edit_travel_checklist_path(@travel,checklist) %>
+          <%= link_to "削除", travel_checklist_path(@travel,checklist),  method: :delete, data: {confirm: '削除しますか？' } %>
         </td>
       </tr>
     <% end %>

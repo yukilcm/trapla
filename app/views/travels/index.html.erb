@@ -16,10 +16,10 @@
         <td><%= travel.start_date %></td>
         <td><%= travel.end_date %></td>
         <td>
-          <%= link_to "Edit", edit_travel_path(travel) %>
-          <%= link_to "Schedule Edit", travel_schedules_path(travel) %>
-          <%= link_to "delete", travel_path(travel),  method: :delete, data: {confirm: '削除しますか？' } %>
-          <%= link_to "Checklist Edit", travel_checklists_path(travel) %>
+          <%= link_to "編集", edit_travel_path(travel) %>
+          <%= link_to "スケジュール編集", travel_schedules_path(travel) %>
+          <%= link_to "削除", travel_path(travel),  method: :delete, data: {confirm: '削除しますか？' } %>
+          <%= link_to "チェックリスト編集", travel_checklists_path(travel) %>
  
         </td>
       </tr>
