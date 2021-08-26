@@ -1,0 +1,16 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bundle_bin/*'
+    - 'bin/*'
+    - 'Gemfile'
+    - 'spec/**/*'
+    - 'node_modules/**/*'
+    - 'lib/idp/**/*'
+    - 'scripts/**/*'
+    - 'lib/tasks/auto_annotate_models.rake'
