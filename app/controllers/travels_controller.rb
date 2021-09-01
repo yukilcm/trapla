@@ -13,11 +13,11 @@ class TravelsController < ApplicationController
     @travel.save!
     redirect_to root_path
   end
-  
-  def edit 
+
+  def edit
     @travel = current_user.travels.find(params[:id])
   end
-  
+
   def update
     @travel = current_user.travels.find(params[:id])
 
@@ -27,8 +27,8 @@ class TravelsController < ApplicationController
       render :edit
     end
   end
-  
-  def destroy 
+
+  def destroy
     @travel = current_user.travels.find(params[:id])
     @travel.destroy
     @travel.save!
@@ -41,5 +41,3 @@ class TravelsController < ApplicationController
     params.require(:travel).permit(:name, :start_date, :end_date)
   end
 end
-
- 
