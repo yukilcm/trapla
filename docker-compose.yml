@@ -8,7 +8,7 @@ services:
       POSTGRES_PASSWORD: password
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 8080 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 80 -b '0.0.0.0'"
     volumes:
       - .:/myapp
     environment:
@@ -16,7 +16,9 @@ services:
       DATABASE: ${DATABASE}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
+      RAILS_ENV: ${RAILS_ENV}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
     ports:
-      - "8080:8080"
+      - "80:80"
     depends_on:
       - db
