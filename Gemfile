@@ -49,6 +49,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rails'
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

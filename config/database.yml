@@ -8,7 +8,8 @@ default: &default
 
 development:
   <<: *default
-  database: myapp_development
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 
 test:

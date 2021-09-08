@@ -13,8 +13,8 @@
     <% @travels.each do |travel| %>
       <tr>
         <td><%= travel.name %></td>
-        <td><%= travel.start_date %></td>
-        <td><%= travel.end_date %></td>
+        <td><%= travel.start_date.strftime("%Y/%m/%d") %></td>
+        <td><%= travel.end_date.strftime("%Y/%m/%d") %></td>
         <td>
           <%= link_to "編集", edit_travel_path(travel) %>
           <%= link_to "スケジュール編集", travel_schedules_path(travel) %>
