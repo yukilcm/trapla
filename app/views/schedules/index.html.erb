@@ -2,7 +2,7 @@
 <div class="mb-3 row">
   <h2><%= @travel.name %></h2>
   <% @schedule_hash.keys.each do |date| %>
-    <%= date %>
+    <%= date.strftime("%Y/%m/%d") %>
     <table class="table">
       <thead>
         <tr>
