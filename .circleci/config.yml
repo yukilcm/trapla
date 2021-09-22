@@ -33,15 +33,11 @@ jobs:
             - rails-demo-yarn-{{ checksum "yarn.lock" }}
             - rails-demo-yarn-
       - run:
-          name: Yarnをinstall
-          command: yarn install --cache-folder ~/.cache/yarn
-      - run:
           name: Wait for DB
           command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
       - run:
           name: Database setup
           command: bin/rails db:create db:schema:load --trace
-      - run: bundle exec bin/webpack
       - run:
           name: execute rspec
           command: bundle exec rspec
