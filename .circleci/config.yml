@@ -54,7 +54,7 @@ jobs:
               - "e9:f1:5b:a8:54:3f:cb:70:5c:0d:da:11:a7:62:da:4f"
       - run:
           name: ssh & deploy
-          command: ssh ec2-user@3.113.16.5 '/home/ec2-user/trapla/deploy.sh'
+          command: ssh ${USER_NAME}@${HOST_NAME} '/home/ec2-user/trapla/deploy.sh'
 
 workflows:
     version: 2
