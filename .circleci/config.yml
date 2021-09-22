@@ -28,10 +28,6 @@ jobs:
           key: my-app-bundle-v1-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      - restore_cache:
-          keys:
-            - rails-demo-yarn-{{ checksum "yarn.lock" }}
-            - rails-demo-yarn-
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
