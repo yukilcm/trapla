@@ -9,7 +9,7 @@ RSpec.describe TravelsController do
     
     it "responds successfully" do
       get :index
-      expect(response).not_to be_success
+      expect(response).to be_success
     end
   end
 end
