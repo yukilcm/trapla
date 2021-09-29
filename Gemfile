@@ -38,7 +38,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   gem 'web-console'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'rubocop', require: false
@@ -49,7 +49,6 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rails'
-  gem 'sqlite3', '~> 1.3.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -59,3 +58,4 @@ gem 'devise'
 
 gem "sentry-ruby"
 gem "sentry-rails"
+
